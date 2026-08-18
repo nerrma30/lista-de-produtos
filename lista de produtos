@@ -1,0 +1,24 @@
+produtos = []
+while True:
+    comando = input("Digite o nome do produto:")
+    if comando == '1':  #adicionar
+        produto_novo = input("digite o nome do novo produto:")
+        produtos.append(produto_novo)
+
+    if comando == '2': #alterar
+        produto_antigo = input("Digite o nome produto que você deseja alterar:")
+        produto_novo = input("digite o nome do novo produto:")
+        if produto_antigo in produtos:
+            indice = produtos.index(produto_antigo)
+            produtos[indice] = produto_novo
+            print(f"lista atualizada: [produtos]")
+        else:
+            print("o intem informado não esta na lista.")
+
+    if comando == '3': #remover
+        produto_remover = input("Digite o nome do produto que deseja remover: ")
+        produtos.remove(produto_remover)
+
+    if comando == '4':  #sair
+        print(produtos)
+        break
